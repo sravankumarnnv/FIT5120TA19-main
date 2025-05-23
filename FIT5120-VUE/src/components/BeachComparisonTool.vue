@@ -1040,15 +1040,15 @@ export default {
           // Now process with the API using the created file
           const formData = new FormData();
           formData.append('image', this.imageFile);
-          response = await axios.post('https://fit5120ta19.onrender.com/process-image', formData);
+          response = await axios.post('https://fit5120ta19-main.onrender.com/process-image', formData);
         } 
         // Process normally if we have local file or captured image
         else if (this.imageFile) {
           const formData = new FormData();
           formData.append('image', this.imageFile);
-          response = await axios.post('https://fit5120ta19.onrender.com/process-image', formData);
+          response = await axios.post('https://fit5120ta19-main.onrender.com/process-image', formData);
         } else if (this.capturedImage) {
-          response = await axios.post('https://fit5120ta19.onrender.com/process-camera-image', {
+          response = await axios.post('https://fit5120ta19-main.onrender.com/process-camera-image', {
             image: this.capturedImage
           });
         } else {
@@ -1276,7 +1276,7 @@ export default {
         this.analyzeRipLoading = false;
       };
 
-      img.src = `https://fit5120ta19.onrender.com${result.original}`;
+      img.src = `https://fit5120ta19-main.onrender.com${result.original}`;
     },
     
     convertMsToKmh(speedMs) {
@@ -1658,8 +1658,8 @@ export default {
       
       try {
         // API endpoints
-        const weatherUrl = `https://fit5120ta19.onrender.com/weather?latitude=${lat}&longitude=${lon}`;
-        const marineUrl = `https://fit5120ta19.onrender.com/marine?latitude=${lat}&longitude=${lon}`;
+        const weatherUrl = `https://fit5120ta19-main.onrender.com/weather?latitude=${lat}&longitude=${lon}`;
+        const marineUrl = `https://fit5120ta19-main.onrender.com/marine?latitude=${lat}&longitude=${lon}`;
         
         console.log('Requesting weather data from:', weatherUrl);
         console.log('Requesting marine data from:', marineUrl);
